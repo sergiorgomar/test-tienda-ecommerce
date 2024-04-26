@@ -1,0 +1,7 @@
+@import "@mixins";
+@import "@constants";
+
+.main {
+    @include flex(space-between, center, 8px, column);
+    width: 100%;
+}

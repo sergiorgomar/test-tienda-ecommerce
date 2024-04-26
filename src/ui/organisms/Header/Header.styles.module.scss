@@ -1,0 +1,31 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(space-between, center, 8px);
+    width: 100%;
+    max-width: $max-width;
+    padding: 20px 16px;
+
+    .title {
+        @include font($font-size-larger, 400, inherit);
+        a {
+            text-decoration: none;
+        }
+        a:visited {
+            color: $black-color;
+        }
+    }
+
+    .icons_container {
+        @include flex(space-between, center, 16px, row);
+        svg {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        svg:hover {
+            transform: translateY(-5px);
+        }
+    }
+    
+}

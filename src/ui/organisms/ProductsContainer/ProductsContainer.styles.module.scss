@@ -1,0 +1,27 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(space-between, flex-start, 32px, column);
+    width: 100%;
+    max-width: $max-width;
+    padding: 20px 16px;
+
+    .title_container {
+        .title {
+            @include font($font-size-medium, 400, inherit);
+            border-bottom: 2px solid $black-color;
+            padding: 4px 6px;
+        }
+    }
+
+
+    .cards_container {
+        width: 100%;
+        display: grid;
+
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); 
+        grid-gap: 32px;
+    }
+    
+}

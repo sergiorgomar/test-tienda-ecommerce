@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@import "@mixins";
+@import "@constants";
+
+:root { 
+    background-color: $white-color;
+    padding: 0;
+    margin: 0;
+    font-family: $primary-font;
+    box-sizing: border-box;  
+    font-style: normal;
+    line-height: normal;
+    text-rendering: optimizeSpeed;
+}
+
+body {
+    @include flex(space-between, center, 8px, column);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+main {
+    @include flex(space-between, center, 8px, column);
+    width: 100%;
+}
+
+input, button, div, main, p {
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+

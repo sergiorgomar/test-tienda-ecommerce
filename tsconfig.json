@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+
+      /*FRONTEND*/
+      "@mixins": ["./src/styles/mixins.scss"],
+      "@constants": ["./src/styles/constants.scss"],
+      "@animations": ["./src/styles/animations.scss"],
+
+      "@ui/atoms": ["./src/ui/atoms"],
+      "@ui/molecules": ["./src/ui/molecules"],
+      "@ui/organisms": ["./src/ui/organisms"],
+
+      "@utils/*": ["./src/logic/utils/*"],
+      "@appTypes/*": ["./src/types/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+
+      "@frontendServices": ["./src/logic/services/services.ts"],
+      "@hooks/*": ["./src/logic/hooks/*"],
+
+
+      /*BACKEND*/
+    /*   "@controllers/*": ["./server/controllers/*"],
+      "@models/*": ["./server/models/*"],
+      "@services/*": ["./server/services/*"],
+      "@dtos/*": ["./server/dtos/*"], */
+    },
+    "moduleResolution": "node"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

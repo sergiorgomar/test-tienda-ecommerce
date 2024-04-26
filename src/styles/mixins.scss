@@ -1,0 +1,27 @@
+@mixin flex(
+    $justify: flex-start, 
+    $align: center, 
+    $gap: 0px, 
+    $direction: row, 
+    $wrap: nowrap 
+) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin font($size: 1px, $weight: normal, $color: inherit) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+ 
+// 👷🚧 work on progress
+@mixin grid($rows: 1, $columns: 1fr, $gap: 0px) {
+    display: grid;
+    grid-template-columns: repeat($rows, $columns);
+    grid-gap: $gap;
+}
+
