@@ -13,10 +13,11 @@ import { getAllProductsService } from "@frontendServices"
 import { Product } from "@appTypes/services.types";
 
 import useFetching from "@hooks/useFetching";
+import { Loader } from "@ui/atoms";
 
 export default function ProductContainer(){
 
-    const [products, setProducts] = useState<Product[] | null>();
+    const [products, setProducts] = useState<Product[] | null | undefined>(undefined);
 
     const { makeFetchGet } = useFetching();
 
@@ -35,19 +36,26 @@ export default function ProductContainer(){
                 <p className={styles.title}>Productos</p>
             </div>
             <div className={styles.cards_container}>
-                { products ? 
-                    products.map((product) => {
-                        return (
-                            <ProductCard 
-                                key={product.id}
-                                productID={product.id}
-                                name={product.name}
-                                imgURL={product.img_url}
-                                price={product.price}
-                            />
-                        )
-                    })
-                : <p>No se han encontrado productos</p>}
+                { products !== undefined ?
+                    <>
+                        {products !== null ?
+                        
+                            products.map((product) => {
+                                return (
+                                    <ProductCard 
+                                        key={product.id}
+                                        productID={product.id}
+                                        name={product.name}
+                                        imgURL={product.img_url}
+                                        price={product.price}
+                                    />
+                                )
+                            })
+                        : <p>No se han encontrado productos</p>}
+                       
+                    </>
+                    : <p>Obteniendo productos...</p>
+                }
             </div>
         </section>
     )

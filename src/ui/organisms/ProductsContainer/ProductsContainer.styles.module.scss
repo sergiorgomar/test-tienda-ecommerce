@@ -4,8 +4,12 @@
 .container {
     @include flex(space-between, flex-start, 32px, column);
     width: 100%;
-    max-width: $max-width;
+    max-width: 1400px;
     padding: 20px 16px;
+
+    @include laptop-large {
+        max-width: 90%;
+    }
 
     .title_container {
         .title {
@@ -15,13 +19,22 @@
         }
     }
 
-
     .cards_container {
         width: 100%;
         display: grid;
 
         grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); 
         grid-gap: 32px;
+
+        @include laptop-small {
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); 
+        }
+
+
+        @include mobile-large {
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); 
+        }
+
     }
     
 }

@@ -4,8 +4,12 @@
 .container {
     @include flex(space-between, flex-start, 32px, column);
     width: 100%;
-    max-width: $max-width;
+    max-width: 1400px;
     padding: 20px 16px;
+
+    @include laptop-large {
+        max-width: 90%;
+    }
 
     .title_container {
         .title {
@@ -22,11 +26,28 @@
 
         .product_content {
             @include flex(flex-start, flex-start, 32px, row);
-            width: 70%;
+            width: 90%;
 
+            @include tablet {
+                flex-direction: column;
+                width: 70%;
+            }
+
+            @include mobile-large {
+                flex-direction: column;
+                width: 90%;
+            }
             img {
                 width: 40%;
                 transition: all 0.3s ease-in-out;
+                
+
+                @include tablet {
+                    width: 100%;
+                }
+
+               
+
             }
 
             img:hover {
@@ -38,8 +59,17 @@
                 @include flex(flex-start, flex-start, 16px, column);
                 width: 70%;
 
+
+                @include tablet {
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                }
+
                 .name {
                     @include font($font-size-larger, 600, $black-color);
+
+                    
                 }
 
                 .price {

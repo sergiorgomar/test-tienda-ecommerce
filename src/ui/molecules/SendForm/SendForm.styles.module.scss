@@ -1,0 +1,40 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(center, center, 16px, column);
+    height: 100%;
+    
+    .title {
+        @include font($font-size-medium, 500, inherit);
+    }
+
+    .subtitle {
+        @include font($font-size-small, 500, inherit);
+    }
+
+    > form {
+        grid-template-columns: repeat(6, 1fr); 
+        grid-gap: 24px; 
+        grid-row-gap: 24px;
+
+        > div:nth-child(n+1) {
+            grid-column: span 2;
+        }
+
+
+        @include tablet {
+            > div:nth-child(n+1) {
+                grid-column: span 3;
+            }
+        }
+
+        @include mobile-large {
+            > div:nth-child(n+1) {
+                grid-column: span 6;
+            }
+        }
+    }
+   
+    
+}

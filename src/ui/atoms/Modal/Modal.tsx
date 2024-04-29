@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import * as proptypes from "./Modal.proptypes";
 import styles from "./Modal.styles.module.scss";
 import { IconFactory } from "@ui/atoms";
@@ -8,15 +8,15 @@ import { IconFactory } from "@ui/atoms";
 ///On close es una funcion que se reemplza el cerrar modal desde fuera se controla desde fuera
 export default function Modal({title, message, onClose, buttonsProps } : proptypes.ModalProps) {
 
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = useMemo(() => (event: KeyboardEvent) => {
         event.preventDefault();
         if (event.key === 'Escape') onClose();
-    };
+    }, [onClose])
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+    }, [handleKeyDown]);
 
     return (
 

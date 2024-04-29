@@ -7,7 +7,7 @@ export default function Header(){
     return (
         <header className={styles.container}>
             <h1 className={styles.title}>
-                <a href="/">E-COMMERCE TEST</a>
+                <a href="/">TIENDA</a>
             </h1>
             <div className={styles.icons_container}>
                 <IconFactory iconType="shoping_car" />

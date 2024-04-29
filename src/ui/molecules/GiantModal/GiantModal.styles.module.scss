@@ -35,14 +35,14 @@
         position: absolute;
         background-color: #fefefe;
 
-        $top: 80px;
-        $left: 300px;
+        $top: 10%;
+        $left: 10%;
 
         top: $top;
         left: $left;
 
-        height: calc(100% - $top*2);
-        width: calc(100% - $left*2);
+        height: calc(80%);
+        width: calc(80%);
 
         overflow-y: auto;
         border-radius: 8px;
@@ -60,6 +60,10 @@
             svg {
                 cursor: pointer;
             }
+        }
+
+        .children_content {
+            width: 100%;
         }
     }
 }

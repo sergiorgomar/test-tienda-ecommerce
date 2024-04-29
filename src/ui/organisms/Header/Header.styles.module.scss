@@ -4,8 +4,9 @@
 .container {
     @include flex(space-between, center, 8px);
     width: 100%;
-    max-width: $max-width;
+    max-width: 1400px;
     padding: 20px 16px;
+    box-sizing: border-box;
 
     .title {
         @include font($font-size-larger, 400, inherit);

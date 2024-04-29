@@ -6,8 +6,8 @@ export type ModalConfig = {
     title: string;
     message: string;
     onClose: () => void;
-    buttonsProps?: {
-        /* cancelButton?: {
+    /* buttonsProps?: {
+        cancelButton?: {
             type: ButtonsTypes,
             text: string,
             handleClick: () => void,
@@ -16,8 +16,8 @@ export type ModalConfig = {
             type: ButtonsTypes
             text: string
             handleClick: () => void,
-        } */
-    }
+        }
+    } */
 };
 
 
@@ -30,3 +30,11 @@ export type IconsList =
     | "shoping_car"
     | "user"
     | "close";
+
+export type InputsTypes = 
+    | "text"
+    | "positive_number"
+    | "email"
+    | "only_text"
+    | "zip_code"
+    | "phone";

@@ -12,6 +12,7 @@
     height: 100vh; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(red($black-color), green($black-color), blue($black-color), 0.45); 
+    backdrop-filter: blur(10px); 
 
     svg {
         width: 70px;

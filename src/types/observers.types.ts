@@ -5,12 +5,12 @@ export type ApiError = {
     detail: string,
     code: number
 };
-export type LoginObserverEvents =
+export type FetchObserverEvents =
   | "networkError"
   | "apiError"
   | "expiredToken";
 
-export type LoginObserverDataTypes<TObserverEvent extends LoginObserverEvents> =
+export type FetchObserverDataTypes<TObserverEvent extends FetchObserverEvents> =
   TObserverEvent extends "networkError" ? string :
   TObserverEvent extends "apiError" ? ApiError :
   TObserverEvent extends "expiredToken" ? null :

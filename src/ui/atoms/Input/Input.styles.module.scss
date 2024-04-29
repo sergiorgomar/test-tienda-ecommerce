@@ -1,0 +1,123 @@
+@import "@mixins";
+@import "@constants";
+
+$inputHeight: 56px;
+
+
+.container {
+    @include flex(flex-start, flex-start, 8px, column);
+    width: 100%;
+    position: relative;
+
+    .input_container{
+        @include flex(space-between, center, 8px, row);
+        position: relative;
+        width: 100%;
+        background-color: $white-color;
+        min-height: $inputHeight;
+        padding: 0 12px;
+        border-radius: 4px;
+
+        .top_text {
+            position: absolute;
+            padding: 0 4px;
+            top: 50%;
+            transform: translateY(-50%); /* Centra verticalmente el elemento */
+            left: 12px;
+            font-weight: 500;
+            opacity: 1;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            font-weight: 500;
+        } 
+    
+    
+        //para subir el span encima
+        .span_fijo_arriba {
+            opacity: 1;
+            top: 0;
+            font-size: 14px;
+            border: none;
+            background-color: white;
+        }
+
+
+        input {
+            border: none;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input::placeholder{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        > span {
+            font-weight: 500;
+        }
+    }
+
+    .helper_text {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+}
+
+.error {
+    svg { fill: $error-450; }
+    .input_container { border: 1px solid $error-450; }
+    .helper_text, .top_text, .texts { color: $error-450; }
+}
+
+.active {
+    svg { fill: $primary-450; }
+    .input_container { border: 1px solid $primary-450; }
+    .helper_text, .top_text, .texts { color: $primary-450; }
+}
+
+.default {
+    svg { fill: $gray-color; }
+    .input_container { border: 1px solid $gray-color; }
+    .helper_text, .top_text, .texts { color: $gray-color; }
+}
+
+.filled {
+    svg { fill: $black-color; }
+    .input_container { border: 1px solid $black-color; }
+    .helper_text, .top_text, .texts { color: $black-color; }
+}
+
+.disabled {
+    svg { fill: $gray-color; }
+    .input_container {
+        border: 1px solid $gray-color;
+        background-color: $gray-bg-color;
+        color: $gray-color;
+        input {
+            background-color: $gray-bg-color;
+            color: $gray-color;
+            user-select: none;
+        }
+    }
+    .helper_text, .top_text, .texts { color: $gray-color; }
+}
+
+.required {
+    svg { fill: $warning-450; }
+    .input_container {
+        border: 1px solid $warning-450;
+        color: $warning-450;
+        input {
+            background-color: $gray-bg-color;
+            color: $warning-450;
+            user-select: none;
+        }
+    }
+    .helper_text, .top_text, .texts { color: $warning-450; }
+}
+
+

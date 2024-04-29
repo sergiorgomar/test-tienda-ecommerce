@@ -10,19 +10,27 @@
     height: 100vh; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(red($white-color), green($white-color), blue($white-color), 0.45); 
+    backdrop-filter: blur(10px); 
+
     .content {
         position: absolute;
         background-color: #fefefe;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 497px;
+        min-width: 497px;
+
         font-style: normal;
         line-height: normal;
         border-radius: 4px;
         border: 1px solid rgba(0, 0, 0, 0.10);
         background: $white-color;
         box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+
+
+        @include tablet {
+            min-width: 90%;
+        }
 
         .modal_header {
             @include flex(space-between, center, 24px, row);

@@ -4,7 +4,6 @@ import styles from "./Loader.styles.module.scss";
 export default function Loader( { text, imgSrc } : LoaderProps) {
     return (
         <div className={styles.container}>
-
             {imgSrc ?
                 <img src={imgSrc} alt="" />
             :

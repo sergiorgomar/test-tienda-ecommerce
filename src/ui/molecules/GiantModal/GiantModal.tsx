@@ -10,14 +10,14 @@ export default function GiantModal( { onClose, children, visibility } : proptype
 
 
     const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
+        /* if (event.key === 'Escape') {
             onClose && onClose();
-        }
+        } */
     };
     const handleMouseDown = (event: MouseEvent) => {
-        if (modalContainerRef.current && !modalContainerRef.current.contains(event.target as Node)) {
+        /* if (modalContainerRef.current && !modalContainerRef.current.contains(event.target as Node)) {
           onClose && onClose();
-        }
+        } */
     };
 
 

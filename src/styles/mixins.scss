@@ -25,3 +25,33 @@
     grid-gap: $gap;
 }
 
+
+// Responsive mixins
+@mixin desktop {
+    @media only screen and (max-width: 2560px) { @content; }
+}
+
+@mixin laptop-large {
+    @media only screen and (max-width: 1440px) { @content; }
+}
+@mixin laptop-medium {
+    @media only screen and (max-width: 1140px) { @content; }
+}
+@mixin laptop-small {
+    @media only screen and (max-width: 1024px) { @content; }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 768px) { @content; }
+}
+
+@mixin mobile-large {
+    @media only screen and (max-width: 425px) { @content; }
+}
+@mixin mobile-medium {
+    @media only screen and (max-width: 375px) { @content; }
+}
+@mixin mobile-small {
+    @media only screen and (max-width: 320px) { @content; }
+}
+

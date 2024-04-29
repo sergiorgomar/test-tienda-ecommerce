@@ -1,27 +1,24 @@
-import {
-  LoginObserverEvents, LoginObserverDataTypes,
-  InvocationsObserverEvents, InvocationsObserverDataTypes,
-} from "@appTypes/observers.types";
+import { FetchObserverEvents, FetchObserverDataTypes, InvocationsObserverEvents, InvocationsObserverDataTypes } from "@appTypes/observers.types";
 
 //Escuchar los eventos de fetching para aparecer modal y/o loaders en cada fetching de datos
 export class FetchObserver{
   static listeners = {} as any;
-  static subscribe<TEvent extends LoginObserverEvents>(event: TEvent, callback: (data: LoginObserverDataTypes<TEvent>)=> void) {
+  static subscribe<TEvent extends FetchObserverEvents>(event: TEvent, callback: (data: FetchObserverDataTypes<TEvent>)=> void) {
       if (!this.listeners[event]) {
         this.listeners[event] = [];
       }
       this.listeners[event].push(callback);
   };
-  static emit<TEvent extends LoginObserverEvents>(event: TEvent, data: LoginObserverDataTypes<TEvent>) {
+  static emit<TEvent extends FetchObserverEvents>(event: TEvent, data: FetchObserverDataTypes<TEvent>) {
     if (this.listeners[event]) {
       this.listeners[event].forEach(
-        (callback: (data: LoginObserverDataTypes<TEvent>) => void) => callback(data)
+        (callback: (data: FetchObserverDataTypes<TEvent>) => void) => callback(data)
       );
     }
   };
-  static unsubscribe<TEvent extends LoginObserverEvents>(
+  static unsubscribe<TEvent extends FetchObserverEvents>(
     event: TEvent,
-    callback: (data: LoginObserverDataTypes<TEvent>) => void
+    callback: (data: FetchObserverDataTypes<TEvent>) => void
   ) {
     const eventListeners = this.listeners[event];
     if (eventListeners) {
